@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;  
+  }
+  html{
+    font-family:'Courier New', Courier, monospace;
+    color: #f0f0f0;
+  }
+  
+  input {
+    height: 30px;
+    width: 300px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    background-color: #0b0d15;
+    color: #ffffff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 12px;
+    margin-top: 30px;
+    padding: 15px;
+  }
+  input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+    transform: scale(1.05);
+  }
+  input::placeholder {
+    color: #969393;
+  }
+  input:focus {
+    outline: #006aff;
+  }
+  
+  body{
+    min-height: 100vh;
+    background: #0b0d15;
+    color: #a2a5b3;
+    align-content: center;
+  }
+  h1{
+    color: white;
+  }
+  h2{
+    color: white;
+  }
+  .card{
+    margin: 0 auto;
+    padding: 2em;
+    width: 1000px;
+    height: 600px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+  }
+  button {
+    width: 280px;
+    background-color: #0b0d15;
+    color: #ffffff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 16px;
+    border: none;
+    margin-top: 20px;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+  }
+  button:hover {
+    transform: scale(1.1);
+    background-color: #0b0d15;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  button:active {
+    transform: scale(0.935) translateY(2px);
+    background-color: #0b0d15;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+  }
+  
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100.2%;
+    width: 100.2%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 20px;
+    animation: 3s spin linear infinite;
+  }
+  .card::before{
+    filter: blur(2.5rem);
+    opacity: 0.5;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }

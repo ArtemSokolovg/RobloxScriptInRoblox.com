@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Hello</h1>
+    <input type="number" placeholder="From" id="one">
+    <input type="number" placeholder="To" id="two">
+    <button onclick=randomnumber()>Generate</button>
+    <h1 id="clickwow">Random Number: </h1>
+    <script>
+      function randomnumber() {
+        const from = Number(document.getElementById('one').value);
+        const to = Number(document.getElementById('two').value);
+        const h1 = document.getElementById
+        const randomNum = Math.floor(Math.random() * (to - from + 1)) + from;
+        document.getElementById("clickwow").textContent="Random Number: " + randomNum;
+      }
+    </script>
+  </div>
+</body>
+</html>
